@@ -14,6 +14,7 @@ return {
           program = "${file}",
           justMyCode = false,
           args = { "-Xfrozen_modules=off" },
+          exceptionBreakpoints = { "all" },
           env = {
             PYDEVD_DISABLE_FILE_VALIDATION = "1",
           },
