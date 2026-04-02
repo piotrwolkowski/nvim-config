@@ -22,22 +22,6 @@ return {
     end,
   },
 
-  -- Disable LSP semantic tokens for Pyright so syntax/colorscheme control Python highlighting
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   opts = {
-  --     servers = {
-  --       pyright = {
-  --         on_init = function(client)
-  --           if client.server_capabilities then
-  --             client.server_capabilities.semanticTokensProvider = nil
-  --           end
-  --         end,
-  --       },
-  --     },
-  --   },
-  -- },
-
   {
     "neovim/nvim-lspconfig",
     opts = {
