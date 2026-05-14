@@ -12,7 +12,7 @@ return {
         opts.adapters,
         require("neotest-python")({
           -- Optional:
-          dap = { justMyCode = false }, -- enable debug
+          dap = { justMyCode = true }, -- enable debug
           runner = "unittest", -- or "pytest" if you use that
         })
       )

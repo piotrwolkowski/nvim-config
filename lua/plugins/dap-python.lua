@@ -12,7 +12,7 @@ return {
           request = "launch",
           name = "Launch file",
           program = "${file}",
-          justMyCode = false,
+          justMyCode = true,
           args = { "-Xfrozen_modules=off" },
           exceptionBreakpoints = { "all" },
           env = {

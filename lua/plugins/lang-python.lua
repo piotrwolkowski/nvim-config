@@ -18,7 +18,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "pyright" })
+      vim.list_extend(opts.ensure_installed, { "pyright", "ruff" })
     end,
   },
 
@@ -39,6 +39,13 @@ return {
             end,
           })
         end,
+        ruff = {
+          init_options = {
+            settings = {
+              lineLength = 144,
+            },
+          },
+        },
       },
     },
   },
@@ -52,5 +59,20 @@ return {
         "ruff", -- Linter
       })
     end,
+  },
+
+  -- Override black's default line length (88 → 144) on format-on-save
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        python = { "black" },
+      },
+      formatters = {
+        black = {
+          prepend_args = { "--line-length", "144" },
+        },
+      },
+    },
   },
 }
